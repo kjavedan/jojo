@@ -4,9 +4,12 @@ import LanguageToggler from "../components/LanguageToggler";
 import { Sun1 } from "iconsax-react";
 import { ModeContext } from "../context/ModeContext";
 import { Box } from "@mui/material";
+import { LanguageContext } from "../context/LanguageContext";
 
 const Header = () => {
+  //CONTEXT
   const { toggleMode } = useContext(ModeContext);
+  const { curLan } = useContext(LanguageContext);
 
   return (
     <StyledHeader>

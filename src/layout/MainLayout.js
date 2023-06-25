@@ -21,12 +21,12 @@ export default function MainLayout() {
 const StyledRoot = styled(Box)(({ theme }) => ({
   minHeight: "100%",
   overflow: "hidden",
-  border: "solid 2px red",
+  // border: "solid 2px red",
   background: theme.palette.background.default,
 }));
 
 const Main = styled("div")(({ theme }) => ({
-  border: "solid",
+  // border: "solid",
   flexGrow: 1,
   overflow: "auto",
   minHeight: "99vh",

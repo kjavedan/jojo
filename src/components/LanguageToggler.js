@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { ThemeToggler as StyledLanguageToggler } from "../layout/Header";
 import { Flag } from "iconsax-react";
 import Popover from "@mui/material/Popover";
@@ -13,8 +13,13 @@ import {
 import flagBrititsh from "../images/flagBritish.png";
 import flagIran from "../images/flagIran.png";
 import flagUae from "../images/flagUae.png";
+import { LanguageContext } from "../context/LanguageContext";
 
 const LanguageToggler = () => {
+  //CONTEXT
+  const { selectLanguage } = useContext(LanguageContext);
+
+  //STATES
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -23,6 +28,11 @@ const LanguageToggler = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleLanguageSelecte = (lang) => {
+    selectLanguage(lang);
+    handleClose();
   };
 
   const open = Boolean(anchorEl);
@@ -44,29 +54,34 @@ const LanguageToggler = () => {
         open={open}
         anchorEl={anchorEl}
         onClose={handleClose}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "left",
-        }}
+        anchorOrigin={{ vertical: "top", horizontal: "left" }}
+        transformOrigin={{ vertical: "top", horizontal: "right" }}
+        sx={{ marginLeft: "-5px" }}
       >
         <List>
-          <ListItemButton>
+          <ListItemButton onClick={() => handleLanguageSelecte("en")}>
             <ListItemIcon>
               <img style={styles} src={flagBrititsh} alt="england flag" />
             </ListItemIcon>
-            <ListItemText>English</ListItemText>
+            <ListItemText>
+              <Typography variant="subtitle2">English</Typography>
+            </ListItemText>
           </ListItemButton>
-          <ListItemButton>
+          <ListItemButton onClick={() => handleLanguageSelecte("fa")}>
             <ListItemIcon>
               <img style={styles} src={flagIran} alt="england flag" />
             </ListItemIcon>
-            <ListItemText>Farsi</ListItemText>
+            <ListItemText>
+              <Typography variant="subtitle2">Farsi</Typography>
+            </ListItemText>
           </ListItemButton>
-          <ListItemButton>
+          <ListItemButton onClick={() => handleLanguageSelecte("ar")}>
             <ListItemIcon>
               <img style={styles} src={flagUae} alt="england flag" />
             </ListItemIcon>
-            <ListItemText>Arabic</ListItemText>
+            <ListItemText>
+              <Typography variant="subtitle2">Arabic</Typography>
+            </ListItemText>
           </ListItemButton>
         </List>
       </Popover>

@@ -17,6 +17,7 @@ import {
   ThemeProvider as MuiThemeProvider,
 } from "@mui/material/styles";
 import typography from "./custom/typography";
+import { language } from "../data/language";
 
 const ThemeProvider = ({ children }) => {
   //Contexts
@@ -43,7 +44,7 @@ const ThemeProvider = ({ children }) => {
   return (
     <StyledEngineProvider injectFirst>
       <MuiThemeProvider theme={theme}>
-        <CustomGlobalStyles />
+        <CustomGlobalStyles curLan={curLan} />
         {children}
       </MuiThemeProvider>
     </StyledEngineProvider>

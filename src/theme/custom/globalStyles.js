@@ -4,7 +4,7 @@ import { GlobalStyles } from "@mui/system";
 
 // ----------------------------------------------------------------------
 
-export default function CustomGlobalStyles() {
+export default function CustomGlobalStyles({ curLan }) {
   const inputGlobalStyles = (
     <GlobalStyles
       styles={{
@@ -12,6 +12,7 @@ export default function CustomGlobalStyles() {
           boxSizing: "border-box",
         },
         html: {
+          direction: curLan === "en" ? "ltr" : "rtl",
           margin: 0,
           padding: 0,
           width: "100%",
