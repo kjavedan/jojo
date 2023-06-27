@@ -3,6 +3,7 @@ import { Stack, Typography } from "@mui/material";
 import React, { useContext } from "react";
 import { language } from "../data/language";
 import { LanguageContext } from "../context/LanguageContext";
+import ReactPlayer from "react-player";
 
 const Post = () => {
   //CONTEXT
@@ -23,6 +24,15 @@ const Post = () => {
           {language[curLan].readingTime}: 1 min
         </Typography>
       </Stack>
+      <Stack mt={4}>
+
+      <ReactPlayer
+      controls
+      url="https://youtu.be/VOXOcMHAT6k"
+      width="100%"
+      height="400px"
+    />
+    </Stack>
       <Stack mt={5}>
         <Typography variant="h3">{language[curLan].introTitle}:</Typography>
         <Typography variant="body1">{language[curLan].introBody}</Typography>
@@ -34,6 +44,9 @@ const Post = () => {
       <Stack mt={5}>
         <Typography variant="h3">{language[curLan].concTitle}</Typography>
         <Typography variant="body1">{language[curLan].concBody}</Typography>
+      </Stack>
+      <Stack mt={2}>
+        <Typography variant="h6">{language[curLan].peace}</Typography>
       </Stack>
     </StyledPost>
   );

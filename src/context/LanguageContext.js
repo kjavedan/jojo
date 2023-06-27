@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 const Context = createContext();
 
 const ContextProvider = ({ children }) => {
-  const [curLan, setCurLan] = useState("en");
+  const [curLan, setCurLan] = useState("fa");
 
   const selectLanguage = (language) => {
     if (language === "fa") {
