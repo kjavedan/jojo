@@ -77,21 +77,22 @@ const typography = (language, palette) => {
     h6: {
       fontWeight: 700,
       lineHeight: 28 / 18,
-      fontSize: pxToRem(17),
+      fontSize: pxToRem(16),
       textTransform: "capitalize",
-      color: palette.text.caption,
+      color: palette.text.secondary,
       ...responsiveFontSizes({ sm: 18, md: 18, lg: 18 }),
     },
     subtitle1: {
       fontWeight: 600,
       lineHeight: 1.5,
-      fontSize: pxToRem(16),
-      color: palette.text.primary,
+      color: palette.text.secondary,
+      fontSize: pxToRem(14),
     },
     subtitle2: {
-      fontWeight: 600,
+      fontWeight: 500,
       lineHeight: 22 / 14,
       fontSize: pxToRem(14),
+      color: palette.grey[600],
     },
     body1: {
       lineHeight: 1.5,

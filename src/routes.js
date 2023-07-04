@@ -6,6 +6,7 @@ import { Navigate, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Page404 from "./pages/Page404";
 import MainLayout from "./layout/MainLayout";
+import Posts from "./pages/Posts";
 
 //PAGES
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
         index: true,
       },
       { path: "home", element: <Home /> },
+      { path: "posts/:id", element: <Posts /> },
     ],
   },
   {
