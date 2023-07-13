@@ -27,11 +27,11 @@ const StyledRoot = styled(Box)(({ theme }) => ({
 const Main = styled("div")(({ theme }) => ({
   // border: "solid",
   flexGrow: 1,
-  overflow: "auto",
+  // overflow: "auto",
   minHeight: "99vh",
   position: "relative",
   padding: theme.spacing(0, 3),
-  overflowX: "hidden",
+  // overflowX: "hidden",
   [theme.breakpoints.up("lg")]: {
     width: "800px",
     margin: "0 auto",

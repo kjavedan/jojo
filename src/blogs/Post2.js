@@ -14,7 +14,7 @@ import { language } from "../data/language";
 import { LanguageContext } from "../context/LanguageContext";
 import { ArrowDown2 } from "iconsax-react";
 import styled from "@emotion/styled";
-import image1 from "../assets/gif/dead.gif";
+// import image1 from "../assets/gif/dead.gif";
 import { post2data } from "../data/post2Data";
 
 const Post2 = () => {
@@ -84,7 +84,7 @@ const Post2 = () => {
         )}
         <ReactPlayer
           controls
-          url="https://youtu.be/VOXOcMHAT6k"
+          url="https://youtu.be/IpPIf05w4Ww"
           width="100%"
           onReady={handleVideoReady}
         />

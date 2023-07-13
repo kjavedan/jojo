@@ -13,10 +13,7 @@ const ActivityCard = ({ curLan, link, cover, icon, title }) => {
   const { mode } = useContext(ModeContext);
 
   return (
-    <StyledActivityCard
-      curLan={curLan}
-      onClick={() => navigate(`/posts/${link}`)}
-    >
+    <StyledActivityCard curLan={curLan} onClick={() => navigate(link)}>
       <StyledActivityCardCover bg={cover}></StyledActivityCardCover>
       <StyledActivityCardIcon>
         <Typography fontSize={24}>{icon}</Typography>

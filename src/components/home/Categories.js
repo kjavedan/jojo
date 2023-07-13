@@ -18,7 +18,7 @@ const Categories = ({ items }) => {
   const { curLan } = useContext(LanguageContext);
 
   // STATES
-  const [openItems, setOpenItems] = useState([1]);
+  const [openItems, setOpenItems] = useState([0]);
 
   // FUNCS
   const handleClick = (index) => {

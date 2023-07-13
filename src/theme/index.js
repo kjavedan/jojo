@@ -18,6 +18,7 @@ import {
 } from "@mui/material/styles";
 import typography from "./custom/typography";
 import { language } from "../data/language";
+import ComponentsOverrides from "./overrides";
 
 const ThemeProvider = ({ children }) => {
   //Contexts
@@ -40,6 +41,7 @@ const ThemeProvider = ({ children }) => {
   }, [mode, curLan]);
 
   const theme = createTheme(themeOptions);
+  theme.components = ComponentsOverrides(theme);
 
   return (
     <StyledEngineProvider injectFirst>

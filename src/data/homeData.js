@@ -10,8 +10,24 @@ export const categorisItemsData = [
       },
       {
         title: "firstWorkoutPlan",
-        icon: "🤸",
+        icon: "2️⃣",
         path: "/posts/first-workout-plan",
+      },
+      {
+        title: "nutrition",
+        icon: "3️⃣",
+        path: "/posts/nutrition",
+      },
+    ],
+  },
+  {
+    title: "tools",
+    icon: "⚙️",
+    children: [
+      {
+        title: "BMRCalculator",
+        icon: "✖️",
+        path: "/Bmr-calculator",
       },
     ],
   },

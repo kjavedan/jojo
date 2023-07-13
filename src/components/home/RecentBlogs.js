@@ -28,6 +28,11 @@ const RecentBlogs = () => {
             {language[curLan].firstWorkoutPlan}
           </Typography>
         </StyledLink>
+        <StyledLink to={"/posts/nutrition"} style={{ marginTop: "8px" }}>
+          <Typography variant="subtitle2">
+            {language[curLan].nutrition}
+          </Typography>
+        </StyledLink>
       </StyledBlogsWrapper>
     </StyledWrapper>
   );
