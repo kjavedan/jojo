@@ -1,0 +1,1105 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>.md file</title>
+    <style>
+      /* cspell:disable-file */
+      /* webkit printing magic: print all background colors */
+      html {
+        -webkit-print-color-adjust: exact;
+      }
+      * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      @media only screen {
+        body {
+          margin: 2em auto;
+          max-width: 900px;
+          color: rgb(55, 53, 47);
+        }
+      }
+
+      body {
+        line-height: 1.5;
+        white-space: pre-wrap;
+        direction: rtl;
+      }
+
+      a,
+      a.visited {
+        color: inherit;
+        text-decoration: underline;
+      }
+
+      .pdf-relative-link-path {
+        font-size: 80%;
+        color: #444;
+      }
+
+      h1,
+      h2,
+      h3 {
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+
+      .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.75em;
+      }
+
+      h1 {
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+      }
+
+      .source {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 1.5em;
+        word-break: break-all;
+      }
+
+      .callout {
+        border-radius: 3px;
+        padding: 1rem;
+      }
+
+      figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+      }
+
+      figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+      }
+
+      mark {
+        background-color: transparent;
+      }
+
+      .indented {
+        padding-left: 1.5em;
+      }
+
+      hr {
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        border: none;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      @media only print {
+        img {
+          max-height: 100vh;
+          object-fit: contain;
+        }
+      }
+
+      @page {
+        margin: 1in;
+      }
+
+      .collection-content {
+        font-size: 0.875rem;
+      }
+
+      .column-list {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .column {
+        padding: 0 1em;
+      }
+
+      .column:first-child {
+        padding-left: 0;
+      }
+
+      .column:last-child {
+        padding-right: 0;
+      }
+
+      .table_of_contents-item {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        padding: 0.125rem;
+      }
+
+      .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+      }
+
+      .table_of_contents-indent-2 {
+        margin-left: 3rem;
+      }
+
+      .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+      }
+
+      .table_of_contents-link {
+        text-decoration: none;
+        opacity: 0.7;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid rgba(55, 53, 47, 0.09);
+        border-collapse: collapse;
+      }
+
+      table {
+        border-left: none;
+        border-right: none;
+      }
+
+      th,
+      td {
+        font-weight: normal;
+        padding: 0.25em 0.5em;
+        line-height: 1.5;
+        min-height: 1.5em;
+        text-align: left;
+      }
+
+      th {
+        color: rgba(55, 53, 47, 0.6);
+      }
+
+      ol,
+      ul {
+        margin: 0;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+      }
+
+      li > ol:first-child,
+      li > ul:first-child {
+        margin-block-start: 0.6em;
+      }
+
+      ul > li {
+        list-style: disc;
+      }
+
+      ul.to-do-list {
+        padding-inline-start: 0;
+      }
+
+      ul.to-do-list > li {
+        list-style: none;
+      }
+
+      .to-do-children-checked {
+        text-decoration: line-through;
+        opacity: 0.375;
+      }
+
+      ul.toggle > li {
+        list-style: none;
+      }
+
+      ul {
+        padding-inline-start: 1.7em;
+      }
+
+      ul > li {
+        padding-left: 0.1em;
+      }
+
+      ol {
+        padding-inline-start: 1.6em;
+      }
+
+      ol > li {
+        padding-left: 0.2em;
+      }
+
+      .mono ol {
+        padding-inline-start: 2em;
+      }
+
+      .mono ol > li {
+        text-indent: -0.4em;
+      }
+
+      .toggle {
+        padding-inline-start: 0em;
+        list-style-type: none;
+      }
+
+      /* Indent toggle children */
+      .toggle > li > details {
+        padding-left: 1.7em;
+      }
+
+      .toggle > li > details > summary {
+        margin-left: -1.1em;
+      }
+
+      .selected-value {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: rgba(206, 205, 202, 0.5);
+        border-radius: 3px;
+        margin-right: 0.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+      }
+
+      .collection-title {
+        display: inline-block;
+        margin-right: 1em;
+      }
+
+      .page-description {
+        margin-bottom: 2em;
+      }
+
+      .simple-table {
+        margin-top: 1em;
+        font-size: 0.875rem;
+        empty-cells: show;
+      }
+      .simple-table td {
+        height: 29px;
+        min-width: 120px;
+      }
+
+      .simple-table th {
+        height: 29px;
+        min-width: 120px;
+      }
+
+      .simple-table-header-color {
+        background: rgb(247, 246, 243);
+        color: black;
+      }
+      .simple-table-header {
+        font-weight: 500;
+      }
+
+      time {
+        opacity: 0.5;
+      }
+
+      .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+      }
+
+      img.icon {
+        border-radius: 3px;
+      }
+
+      .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+      }
+
+      .user-icon-inner {
+        font-size: 0.8em;
+      }
+
+      .text-icon {
+        border: 1px solid #000;
+        text-align: center;
+      }
+
+      .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        max-height: 30vh;
+      }
+
+      .page-header-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+      }
+
+      .page-header-icon img {
+        border-radius: 3px;
+      }
+
+      .link-to-page {
+        margin: 1em 0;
+        padding: 0;
+        border: none;
+        font-weight: 500;
+      }
+
+      p > .user {
+        opacity: 0.5;
+      }
+
+      td > .user,
+      td > time {
+        white-space: nowrap;
+      }
+
+      input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 0.6em;
+        vertical-align: middle;
+      }
+
+      p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+      }
+
+      .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+      }
+
+      .code,
+      code {
+        background: rgba(135, 131, 120, 0.15);
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 85%;
+        tab-size: 2;
+      }
+
+      code {
+        color: #eb5757;
+      }
+
+      .code {
+        padding: 1.5em 1em;
+      }
+
+      .code-wrap {
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+
+      .code > code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: inherit;
+      }
+
+      blockquote {
+        font-size: 1.25em;
+        margin: 1em 0;
+        padding-left: 1em;
+        border-left: 3px solid rgb(55, 53, 47);
+      }
+
+      .bookmark {
+        text-decoration: none;
+        max-height: 8em;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+      }
+
+      .bookmark-title {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.75em;
+        white-space: nowrap;
+      }
+
+      .bookmark-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .bookmark-info {
+        flex: 4 1 180px;
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+        border-radius: 1px;
+      }
+
+      .bookmark-description {
+        color: rgba(55, 53, 47, 0.6);
+        font-size: 0.75em;
+        overflow: hidden;
+        max-height: 4.5em;
+        word-break: break-word;
+      }
+
+      .bookmark-href {
+        font-size: 0.75em;
+        margin-top: 0.25em;
+      }
+
+      .sans {
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+      .code {
+        font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono",
+          "Liberation Mono", Courier, monospace;
+      }
+      .serif {
+        font-family: Lyon-Text, Georgia, ui-serif, serif;
+      }
+      .mono {
+        font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+      }
+      .pdf .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK JP";
+      }
+      .pdf:lang(zh-CN) .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK SC";
+      }
+      .pdf:lang(zh-TW) .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK TC";
+      }
+      .pdf:lang(ko-KR) .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK KR";
+      }
+      .pdf .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK JP";
+      }
+      .pdf:lang(zh-CN) .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK SC";
+      }
+      .pdf:lang(zh-TW) .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK TC";
+      }
+      .pdf:lang(ko-KR) .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK KR";
+      }
+      .pdf .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK JP";
+      }
+      .pdf:lang(zh-CN) .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK SC";
+      }
+      .pdf:lang(zh-TW) .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK TC";
+      }
+      .pdf:lang(ko-KR) .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK KR";
+      }
+      .pdf .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK JP";
+      }
+      .pdf:lang(zh-CN) .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK SC";
+      }
+      .pdf:lang(zh-TW) .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK TC";
+      }
+      .pdf:lang(ko-KR) .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK KR";
+      }
+      .highlight-default {
+        color: rgba(55, 53, 47, 1);
+      }
+      .highlight-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+      }
+      .highlight-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+      }
+      .highlight-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+      }
+      .highlight-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+      }
+      .highlight-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+      }
+      .highlight-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+      }
+      .highlight-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+      }
+      .highlight-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+      }
+      .highlight-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+      }
+      .highlight-gray_background {
+        background: rgba(241, 241, 239, 1);
+      }
+      .highlight-brown_background {
+        background: rgba(244, 238, 238, 1);
+      }
+      .highlight-orange_background {
+        background: rgba(251, 236, 221, 1);
+      }
+      .highlight-yellow_background {
+        background: rgba(251, 243, 219, 1);
+      }
+      .highlight-teal_background {
+        background: rgba(237, 243, 236, 1);
+      }
+      .highlight-blue_background {
+        background: rgba(231, 243, 248, 1);
+      }
+      .highlight-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+      }
+      .highlight-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+      }
+      .highlight-red_background {
+        background: rgba(253, 235, 236, 1);
+      }
+      .block-color-default {
+        color: inherit;
+        fill: inherit;
+      }
+      .block-color-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+      }
+      .block-color-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+      }
+      .block-color-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+      }
+      .block-color-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+      }
+      .block-color-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+      }
+      .block-color-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+      }
+      .block-color-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+      }
+      .block-color-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+      }
+      .block-color-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+      }
+      .block-color-gray_background {
+        background: rgba(241, 241, 239, 1);
+      }
+      .block-color-brown_background {
+        background: rgba(244, 238, 238, 1);
+      }
+      .block-color-orange_background {
+        background: rgba(251, 236, 221, 1);
+      }
+      .block-color-yellow_background {
+        background: rgba(251, 243, 219, 1);
+      }
+      .block-color-teal_background {
+        background: rgba(237, 243, 236, 1);
+      }
+      .block-color-blue_background {
+        background: rgba(231, 243, 248, 1);
+      }
+      .block-color-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+      }
+      .block-color-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+      }
+      .block-color-red_background {
+        background: rgba(253, 235, 236, 1);
+      }
+      .select-value-color-interactiveBlue {
+        background-color: rgba(35, 131, 226, 0.07);
+      }
+      .select-value-color-pink {
+        background-color: rgba(245, 224, 233, 1);
+      }
+      .select-value-color-purple {
+        background-color: rgba(232, 222, 238, 1);
+      }
+      .select-value-color-green {
+        background-color: rgba(219, 237, 219, 1);
+      }
+      .select-value-color-gray {
+        background-color: rgba(227, 226, 224, 1);
+      }
+      .select-value-color-translucentGray {
+        background-color: rgba(255, 255, 255, 0.0375);
+      }
+      .select-value-color-orange {
+        background-color: rgba(250, 222, 201, 1);
+      }
+      .select-value-color-brown {
+        background-color: rgba(238, 224, 218, 1);
+      }
+      .select-value-color-red {
+        background-color: rgba(255, 226, 221, 1);
+      }
+      .select-value-color-yellow {
+        background-color: rgba(253, 236, 200, 1);
+      }
+      .select-value-color-blue {
+        background-color: rgba(211, 229, 239, 1);
+      }
+      .select-value-color-pageGlass {
+        background-color: undefined;
+      }
+      .select-value-color-washGlass {
+        background-color: undefined;
+      }
+
+      .checkbox {
+        display: inline-flex;
+        vertical-align: text-bottom;
+        width: 16;
+        height: 16;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+      }
+
+      .checkbox-on {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+      }
+
+      .checkbox-off {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+      }
+    </style>
+  </head>
+  <body>
+    <article id="95e8bf41-a824-4a3a-aea3-2490d4d98584" class="page sans">
+      <header>
+        <div class="page-header-icon undefined">
+          <span class="icon">🍇</span>
+        </div>
+        <h1 class="page-title">.md file</h1>
+        <p class="page-description"></p>
+      </header>
+      <div class="page-body">
+        <h1 id="07a9aa6d-1fc4-43aa-8174-66db097aef37" class="">تغذیه</h1>
+        <p id="20e01c5b-c387-4308-ad00-3ca048c48c53" class="">
+          بریم سراغ موضوع اصلی این هفته که تغذیه هست، اگرما در تمریناتمون خیلی
+          جدی باشیم و منظم آن ها را انجام دهیم قطعا بدن سالمتر و قوی تر خواهیم
+          داشت ولی اگر تغذیه مناسب با هدفمون نداشته باشیم مطمئن باشید هرگز به
+          نتیجه دلخواه نخواهیم رسید.
+        </p>
+        <p id="0858ceb1-6727-42a5-b9bb-b42040abc36f" class="">
+          برای درک بهتر موضوع به این مثال دقت کنید. ممد رو از هفته قبل که یادتون
+          هست.
+        </p>
+        <p id="74f814e2-045d-4bbb-92b5-21ff9601b5f9" class="">
+          اگر فیلم چطور اولین برنامه تمرینی را طراحی کنم رو ندید می تونید از این
+          لینک
+          <mark class="highlight-blue"
+            ><strong
+              ><a href="https://jojofit.vercel.app/posts/first-workout-plan"
+                >اولین برنامه تمرینی</a
+              ></strong
+            ></mark
+          ><mark class="highlight-blue"><strong> </strong></mark>مشاهد کنید.
+        </p>
+        <p id="f71c5c0e-d953-41e8-9678-2e06de234dc1" class=""></p>
+        <figure id="c5bf188a-b35d-466a-b5d0-bca8044e09a8" class="image">
+          <a href="md%20file%2095e8bf41a8244a3aaea32490d4d98584.png"
+            ><img
+              style="width: 432px"
+              src="md%20file%2095e8bf41a8244a3aaea32490d4d98584.png"
+          /></a>
+        </figure>
+        <p id="58cf62be-0eda-48e8-acc4-27edcad74035" class=""></p>
+        <p id="c991c50f-bb08-4c81-8959-df358a920333" class="">
+          ممد چند وقتیه که داره منظم تمرین میکنه و به این پی برده که بدنش آماده
+          تر شده ولی باز تغیراتی در بدنش مشاهده نمی کنه. ممد پس شروع تمرینات
+          بدنسازی تغذیه ش رو تغیر نداده یعنی به همون صورتی که قبلا غذا میخورده
+          داره الانم میخوره. ولی مشکل اینجاست که ممد نمیدونه این غذا چه جوری
+          توسط بدن داره استفاده میشه.
+        </p>
+        <p id="fad9c529-cf8a-4971-ac42-c40f4a2107ae" class=""></p>
+        <figure id="af87a3b9-e9b2-4fe8-8e67-333877d67c3b" class="image">
+          <a href="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(1).png"
+            ><img
+              style="width: 480px"
+              src="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(1).png"
+          /></a>
+        </figure>
+        <p id="a218cf8c-4b0e-484c-8095-84c2d708b776" class=""></p>
+        <h2 id="fb517e66-d7c3-44a5-9745-ae95a098cb83" class="">ریز مغذی ها</h2>
+        <p id="d5a736e9-aea7-47ab-8239-82c0570d53cf" class="">
+          به صورت کلی هر مواد غذایی که وارد بدنمون میشه را باید به اینگونه نگاه
+          کنیم. فرض کنید شما برای نهار 100گرم برنج خوردید این 100گرم برنج از ریز
+          مغذی هایی ساخته شده که از اینها 4 تا از همه در تغذیه مهمتر هستند. که
+          اینها پروتئین، کربوهیدرات، چربی و فیبرها هستند.
+        </p>
+        <p id="aedc80da-67ce-43c9-bcd3-9dac794d4d32" class=""></p>
+        <figure id="e001e938-2db7-4c0b-b903-276d3a5824f4" class="image">
+          <a href="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(2).png"
+            ><img
+              style="width: 624px"
+              src="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(2).png"
+          /></a>
+        </figure>
+        <p id="a2b42a5c-ad19-412f-973b-0eeafed0d01a" class=""></p>
+        <p id="b8683f5c-81a4-4e55-9d40-aeca2b3085c9" class=""></p>
+        <h2 id="478f1b41-4838-41e8-858b-b5fc780e3010" class="">
+          حقوق غذایی 100 گرم برنج سفید
+        </h2>
+        <p id="a8685ce4-c601-440b-9f7a-ec407e4e2b6b" class="">
+          به عنوان مثال، 100گرم برنج پخته شده که یک منبع سالمه کربوهیدراته رو در
+          نظر بگیرید.
+        </p>
+        <p id="3d951f4c-e6a9-4dcb-9634-dc765ebde379" class=""></p>
+        <figure id="b6ad9198-7930-429f-ae26-aae35c398995" class="image">
+          <a href="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(3).png"
+            ><img
+              style="width: 672px"
+              src="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(3).png"
+          /></a>
+        </figure>
+        <p id="e8ee7768-2639-479e-9e96-87cdb613fcff" class=""></p>
+        <p id="3b0c443b-dc8d-4e33-9ca4-9c1542667690" class="">
+          هر گرم کربوهیدرات داری 4 کالریه و هر گرم پروتیئن همچنین دارای 4کالریه
+          اما اگر به چربی ها دقت کنید هر گرم چربی دارای 9کالریه.
+        </p>
+        <p id="15c6d6e1-5a52-41df-b683-6d3cd4ec40b8" class="">
+          کربوهیدرات ها به عنوان انرژی در بدن استفاده می شوند و لی اگر بیش از
+          اندازه مصرف شوند انرژی به مصرف نشده رو دستمون میمونه و به چربی تبدیل
+          میشه😢.
+        </p>
+        <p id="e4d7598e-45a4-45bd-9fc2-77634d207131" class="">
+          در مجموع برنج سفید یکی از منابع بسیار سالم و محبوب در تغذیه است علارغم
+          آوازه بد آن در جامعه.
+        </p>
+        <p id="43a78171-5a62-4b6f-9db0-4cc09b81103d" class=""></p>
+        <h2 id="3a2bd0a5-4f26-4ea8-a198-058eeb1d3668" class="">
+          حقوق غذایی 100 سینه مرغ
+        </h2>
+        <p id="8b5cc52e-00c6-4ff1-b3ba-5521dfedac9b" class="">
+          حالا 100 گرم سینه مرغ گریل شده را بررسی می کنیم.
+        </p>
+        <p id="880ce044-3c6d-46af-8f23-5b39be4f6adc" class=""></p>
+        <figure id="fab80939-2c9c-41da-be71-cddee6ebb727" class="image">
+          <a href="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(4).png"
+            ><img
+              style="width: 672px"
+              src="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(4).png"
+          /></a>
+        </figure>
+        <p id="3e23d3a4-0bf9-41cb-b0fa-f383e6718220" class=""></p>
+        <p id="39e82d21-5c03-403c-8815-74a0987cc1de" class="">
+          اگر تصمیمی که برای فیت شدن گرفتین جدیه پس بهتون تبریک میگم از این به
+          بعد این غذا عنصر ثابت روزانه تون میشه 😄.
+        </p>
+        <p id="3531c596-1de0-413f-82c2-733212e91f7f" class="">
+          پروتئین ها به عنوان عنصر سازنده بدن شناخته می شوند شما اونهارو مانند
+          مصلاح ساختمانی در نظر بگیرید، اگر مصلاح نداشته باشیم قاعدتا نمی تونم
+          ساختمونمون رو بسازیم به همین سادگی. کربوهیدرات ها رو هم مانند کارگران
+          بدونید یعنی هر دو به هم نیاز دارند.
+        </p>
+        <p id="9777f777-92e9-4392-9d24-eff08284e97b" class="">
+          یک نکته که وجود داره اینکه هردو پروتئین ها و کربوهیدرات ها نباید بیش
+          از اندازه مصرف شوند چرا که پروتیئین بیش از حد میتونه روی کلیه و کبدتون
+          فشار بیاره.
+        </p>
+        <p id="5a6b60ce-4ba6-46b5-882c-963e8932d629" class=""></p>
+        <h2 id="e23e0c57-b6ac-4797-888b-7d525e78f7ec" class="">
+          حقوق غذایی 100 پیتزا
+        </h2>
+        <p id="ad7baf9a-01ce-428d-9c56-0d9aeaa914eb" class="">
+          حالا بریم و 100 گرم پیتزا رو ببینیم.
+        </p>
+        <p id="cf8ef8e5-272d-43c4-96fc-f6a060054b22" class=""></p>
+        <figure id="088b84b4-218a-490e-ae20-7d09c213f9d8" class="image">
+          <a href="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(5).png"
+            ><img
+              style="width: 1715px"
+              src="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(5).png"
+          /></a>
+        </figure>
+        <p id="00c3e4cd-dfad-430d-b67a-abde52cd48ad" class=""></p>
+        <p id="548d1252-d1ca-4818-a56a-ef0d9a498221" class="">
+          دقت کنی نسبت چربی به شدت زیاده در مقایسه به دو مواد غذایی قبلی.
+        </p>
+        <p id="55e8eb49-b120-4c25-b572-e7abb2dc5206" class="">
+          به اندازه ای که اگر هر دوی آنها با هم جمع کنیم کالری کمتری نسبت به
+          پیزا خواهند داشت و خیلی سالمتر هم هستند.
+        </p>
+        <p id="cb2e40eb-f83a-48f6-b4fe-f9cd94759268" class=""></p>
+        <figure id="99679fc5-2cc4-4546-b7ff-2dd738f6e43f" class="image">
+          <a href="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(6).png"
+            ><img
+              style="width: 672px"
+              src="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(6).png"
+          /></a>
+        </figure>
+        <p id="2fcc2095-a9dd-4331-9ec0-baf5757e0557" class=""></p>
+        <p id="b48a9a99-ba3e-4ec9-9a29-abef80d53898" class=""></p>
+        <h2 id="cb9a0f3a-8c7d-4da5-a076-af20c2184751" class="">
+          نسبت ریزمغذی ها در برنامه تمرینی
+        </h2>
+        <p id="6daf1894-4336-4f70-bde7-1ca02062e6f8" class="">
+          برای طراحی یک برنامه تمرینی فاکتورهای زیادی مانند هدف(اضافه وزن، کاهش
+          وزن، افزایش حجم عضله بدون چربی، کاهش چربی بدون از دست دادن عضله و و و
+          و و و الا آخر) دخیل هستند
+        </p>
+        <p id="346bd5ec-962f-4f52-9a00-c18a17dd397c" class="">
+          نسبت 40%کربوهیدرات 35%پروتین 25%چربی به عنوان یکی از محبوبترین نسبت ها
+          برای تغذیه در نظر گرفته شده است چه برای افزایش حجم عضله و چه برای کاهش
+          حجم چربی و ما امروز از این نسبت در طراحی برنامه مون ازش استفاده می
+          کینم شما هدفتون رو مشخص کنید و با ما همراه باشید تا بتونید تغییرات
+          مورد نیاز رو روی برنامه تون اعمال کنید. بریم که برنامه مون رو بنوسیم
+          😁.
+        </p>
+        <p id="8b9a79c4-5d69-451a-b145-a99c58f6dc92" class=""></p>
+        <p id="a4485c46-c8ab-4327-9439-8788f709bb50" class="">
+          برای این کار ابتد باید کالری روزانه مون رو به دست بیارم برای این کار
+          می تونیم از محاسبگر کالری روزانه در وب سایت جوجوفیت (همین وبسایت)
+          استفاده کنیم. از طریق این
+          <mark class="highlight-blue"
+            ><strong
+              ><a href="https://jojofit.vercel.app/BMR-calculator"
+                >لینک
+              </a></strong
+            ></mark
+          >واطلاعاتمون وارد می کنیم پس از وارد کردن اطلاعات محاسبه رو کلیک می
+          کنیم و اینم کالری روزانه مون.
+        </p>
+        <p id="4d471687-a3dc-4379-89ca-cdfd061e0f97" class=""></p>
+        <p id="dd7605b0-35ed-447b-9539-75127db2db5d" class="">
+          حالا باید هدفمون رو مشخص کنیم آیا کاهش وزن هست که برای این کار 200 تا
+          300 کالری از عدد به دست آمده کم می کنیم و اگر اضافه وزن هست 200 تا 300
+          کالری به عدد به دست آمده اضاف می کنیم و یا اینکه مبتدی هستید و میخواین
+          از فرصت استفاده کنید و همزمان چربی ازدست بدین و عضله بسازید. چیزی که
+          من میخوام انجام بدم عدد را خودش نگه دارید.
+        </p>
+        <p id="ad9f686d-ec86-4ac3-9f5a-1a27caf8c6de" class="">
+          هر هدفی که انتخاب کردید عددتون رو به دست بیارید تا بریم و نسبت ریزمغذی
+          ها رواز این کالری به دست بیارم. برای من میشه این.
+        </p>
+        <p id="448ff0f4-81bf-4b64-b05b-5132de468a83" class=""></p>
+        <p id="15d1ecf0-9792-4cd2-aa08-dc31e2766f2b" class=""></p>
+        <figure id="9cb139ac-5c06-435c-a2db-0b9ebdb38c06" class="image">
+          <a href="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(7).png"
+            ><img
+              style="width: 480px"
+              src="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(7).png"
+          /></a>
+        </figure>
+        <p id="45d2fff2-98af-4448-8cff-4e72ae0bbaee" class=""></p>
+        <p id="2d7d2669-3d7d-426c-9dda-23a0e87c23b5" class="">
+          حالا بریم و اینا اعداد رو روی چهار تا پنج وعده تقسیم کنیم.
+        </p>
+        <p id="83d70463-997e-4090-a54a-e14d8377b4b4" class=""></p>
+        <figure id="387134f7-7d4e-406e-b2a7-8600bc47220f" class="image">
+          <a href="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(8).png"
+            ><img
+              style="width: 1756px"
+              src="md%20file%2095e8bf41a8244a3aaea32490d4d98584/_(8).png"
+          /></a>
+        </figure>
+        <p id="9655a0e4-d5b5-4fc5-88a9-1d4204ef0d79" class=""></p>
+        <p id="bc43a11c-10d9-4930-a7fe-5ae0fb73e01e" class="">
+          اینم برنامه غذایی 🤝😋.
+        </p>
+        <p id="3e0e7eaf-bb31-4b05-a62f-ebbbe736ee25" class="">
+          <strong
+            ><strong
+              ><strong
+                ><strong
+                  ><strong
+                    ><strong
+                      ><strong
+                        ><strong
+                          ><strong
+                            ><strong
+                              ><strong
+                                ><strong
+                                  ><strong
+                                    ><strong
+                                      ><strong
+                                        ><strong
+                                          ><strong
+                                            ><strong
+                                              ><strong
+                                                ><strong
+                                                  >نکته مهم:
+                                                </strong></strong
+                                              ></strong
+                                            ></strong
+                                          ></strong
+                                        ></strong
+                                      ></strong
+                                    ></strong
+                                  ></strong
+                                ></strong
+                              ></strong
+                            ></strong
+                          ></strong
+                        ></strong
+                      ></strong
+                    ></strong
+                  ></strong
+                ></strong
+              ></strong
+            ></strong
+          ><mark class="highlight-red"
+            ><strong
+              ><strong
+                ><strong
+                  ><strong
+                    ><strong
+                      ><strong
+                        ><strong
+                          ><strong
+                            ><strong
+                              ><strong
+                                ><strong
+                                  ><strong
+                                    ><strong
+                                      ><strong
+                                        ><strong
+                                          ><strong
+                                            ><strong
+                                              ><strong
+                                                ><strong
+                                                  ><strong
+                                                    >شما میتوند مواد غذایی رو
+                                                    عوض کنید ولی حواستون باشه
+                                                    اعداد و ارقام باید تغییر
+                                                    نکنند با تشکر.</strong
+                                                  ></strong
+                                                ></strong
+                                              ></strong
+                                            ></strong
+                                          ></strong
+                                        ></strong
+                                      ></strong
+                                    ></strong
+                                  ></strong
+                                ></strong
+                              ></strong
+                            ></strong
+                          ></strong
+                        ></strong
+                      ></strong
+                    ></strong
+                  ></strong
+                ></strong
+              ></strong
+            ></mark
+          >
+        </p>
+        <p id="2ac4bd07-350a-4a6b-8341-12fdb5dec4b1" class=""></p>
+      </div>
+    </article>
+  </body>
+</html>

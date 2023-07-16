@@ -79,6 +79,7 @@ export const language = {
     dailyCalories: "Daily Calories",
     tools: "tools",
     nutrition: "nutrition",
+    nutritionInBodyBuilding: "nutrition in bodybuilding",
   },
   ar: {
     recent: "الأخيرة",
@@ -161,6 +162,7 @@ export const language = {
     dailyCalories: "سعرات الیومیه",
     tools: "الادوات",
     nutrition: "التغذیه",
+    nutritionInBodyBuilding: "nutrition in bodybuilding",
   },
   fa: {
     recent: "فعالیت",
@@ -242,5 +244,6 @@ export const language = {
     dailyCalories: "کالری روزانه شما",
     tools: "ابزار",
     nutrition: "تغذیه",
+    nutritionInBodyBuilding: "تغذیه در بدنسازی",
   },
 };

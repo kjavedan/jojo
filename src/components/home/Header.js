@@ -43,7 +43,7 @@ export const StyledHeader = styled("nav")(({ theme }) => ({
   width: "100%",
   height: "70px",
   position: "fixed",
-  zIndex: 100,
+  zIndex: 999,
   top: 0,
   left: 0,
   padding: theme.spacing(0, 3),
