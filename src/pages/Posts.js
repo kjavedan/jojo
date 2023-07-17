@@ -6,6 +6,7 @@ import Post2 from "../blogs/Post2";
 import styled from "@emotion/styled";
 import { Box } from "@mui/material";
 import Nutrition from "../blogs/Nutration";
+import Nutrition1 from "../blogs/Nutrition1";
 
 const Posts = () => {
   //NAVIGATION
@@ -42,7 +43,7 @@ const Posts = () => {
         ) : selectePost === 2 ? (
           <Post2 />
         ) : (
-          <Nutrition />
+          <Nutrition1 />
         )}
       </StyledWrapper>
     </div>
